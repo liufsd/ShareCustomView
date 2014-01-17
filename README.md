@@ -17,5 +17,5 @@ custom shareSDK actionSheet view  and support like/unlike button.
 Simply copy the class ShareTools to your project, initialise it, show it. Voila!
 
 ```
- [[ShareTools shareToolsInstance] showShareView:self];
+  [[ShareTools shareToolsInstance] showShareView:self isFollow:NO];
 ```
