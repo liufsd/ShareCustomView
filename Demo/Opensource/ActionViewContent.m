@@ -7,7 +7,7 @@
 //
 
 #import "ActionViewContent.h"
-#define itemPerPage 9
+#define itemPerPage 8
 
 @interface ActionViewContent()<UIScrollViewDelegate>
 @property (nonatomic, retain)UIScrollView* scrollView;
@@ -106,7 +106,7 @@
         //        NSLog(@"page %d",PageNo);
         int index  = i%itemPerPage;
         
-        if (itemPerPage == 9) {
+        if (itemPerPage == 8) {
             
             int row = index/4;
             int column = index%4;
