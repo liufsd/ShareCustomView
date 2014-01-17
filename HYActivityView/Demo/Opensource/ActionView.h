@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #define UIControlStateAll UIControlStateNormal & UIControlStateSelected & UIControlStateHighlighted
-#define SYSTEM_VERSION_LESS_THAN(version) ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] == NSOrderedAscending)
+#define IOS7_OR_LATER		( [[UIDevice currentDevice].systemVersion doubleValue]>=7.0)
 
-@interface ActionView : UIView
+//#define USEToolBarStyle
+
+@interface ActionView : UIToolbar
 
 - (void)showInView:(UIView *)theView;
 -(void)dismiss;

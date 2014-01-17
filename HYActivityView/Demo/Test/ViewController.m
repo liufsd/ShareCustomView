@@ -32,8 +32,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImageView *bg = [[UIImageView alloc] initWithFrame:self.view.frame];
+    [bg setImage:[UIImage imageNamed:@"photo2.jpg"]];
+    [self.view addSubview:bg];
 	// Do any additional setup after loading the view.
-    
     self.button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.button setTitle:@"press button" forState:UIControlStateNormal];
     [self.button sizeToFit];
@@ -70,10 +72,9 @@
     
     ActionView* actionview=[[ActionView alloc] initWithFrame:CGRectMake(0, [[UIApplication sharedApplication] keyWindow].frame.size.height, self.view.frame.size.width, 150)];
     
-    UITextField* text=[[UITextField alloc] initWithFrame:CGRectMake(5, 20, self.view.frame.size.width-10, 35)];
-    text.borderStyle=UITextBorderStyleRoundedRect;
-    text.text=@"7654321";
-    [actionview addSubview:text];
+    UILabel* lable=[[UILabel alloc] initWithFrame:CGRectMake(5, 20, self.view.frame.size.width-10, 35)];
+    lable.text=@"this is a custom view";
+    [actionview addSubview:lable];
     
     [actionview showInView:self.view];
     
