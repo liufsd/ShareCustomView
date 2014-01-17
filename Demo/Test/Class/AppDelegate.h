@@ -22,5 +22,5 @@
     SSInterfaceOrientationMask _interfaceOrientationMask;
 }
 @property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic,readonly) AGViewDelegate *viewDelegate;
 @end
