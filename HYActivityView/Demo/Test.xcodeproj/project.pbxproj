@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0612D79918878F4800B303CE /* AWActionSheetIpad.m in Sources */ = {isa = PBXBuildFile; fileRef = 0612D79818878F4800B303CE /* AWActionSheetIpad.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0665731B1888F1330053C577 /* ActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0665731A1888F1330053C577 /* ActionView.m */; };
 		6E18608F182CD3BD00B21899 /* share_platform_email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E186089182CD3BC00B21899 /* share_platform_email@2x.png */; };
 		6E186090182CD3BD00B21899 /* share_platform_evernote@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E18608A182CD3BC00B21899 /* share_platform_evernote@2x.png */; };
 		6E186091182CD3BD00B21899 /* share_platform_imessage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E18608B182CD3BC00B21899 /* share_platform_imessage@2x.png */; };
@@ -28,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0612D79718878F4800B303CE /* AWActionSheetIpad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWActionSheetIpad.h; sourceTree = "<group>"; };
+		0612D79818878F4800B303CE /* AWActionSheetIpad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWActionSheetIpad.m; sourceTree = "<group>"; };
+		066573191888F1330053C577 /* ActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionView.h; sourceTree = "<group>"; };
+		0665731A1888F1330053C577 /* ActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionView.m; sourceTree = "<group>"; };
 		6E186089182CD3BC00B21899 /* share_platform_email@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_platform_email@2x.png"; sourceTree = "<group>"; };
 		6E18608A182CD3BC00B21899 /* share_platform_evernote@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_platform_evernote@2x.png"; sourceTree = "<group>"; };
 		6E18608B182CD3BC00B21899 /* share_platform_imessage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_platform_imessage@2x.png"; sourceTree = "<group>"; };
@@ -68,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		066573181888F1330053C577 /* Opensource */ = {
+			isa = PBXGroup;
+			children = (
+				066573191888F1330053C577 /* ActionView.h */,
+				0665731A1888F1330053C577 /* ActionView.m */,
+			);
+			path = Opensource;
+			sourceTree = SOURCE_ROOT;
+		};
 		6E186088182CD38A00B21899 /* image */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +127,9 @@
 		6EABB5DB18278FA4009DFAD6 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				066573181888F1330053C577 /* Opensource */,
+				0612D79718878F4800B303CE /* AWActionSheetIpad.h */,
+				0612D79818878F4800B303CE /* AWActionSheetIpad.m */,
 				6E186088182CD38A00B21899 /* image */,
 				6EABB5E418278FA4009DFAD6 /* AppDelegate.h */,
 				6EABB5E518278FA4009DFAD6 /* AppDelegate.m */,
@@ -210,9 +228,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0612D79918878F4800B303CE /* AWActionSheetIpad.m in Sources */,
 				6EABB5E218278FA4009DFAD6 /* main.m in Sources */,
 				6EABB5E618278FA4009DFAD6 /* AppDelegate.m in Sources */,
 				6EABB5F418278FB3009DFAD6 /* ViewController.m in Sources */,
+				0665731B1888F1330053C577 /* ActionView.m in Sources */,
 				6E1F0E8E182A171D00F762F5 /* HYActivityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
