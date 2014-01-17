@@ -64,13 +64,6 @@
 - (void)buttonClicked:(UIButton *)button
 {
     
-//    ActionView* actionview=[[ActionView alloc] initWithFrame:CGRectMake(0, [[UIApplication sharedApplication] keyWindow].frame.size.height, self.view.frame.size.width, 150)];
-//    
-//    UILabel* lable=[[UILabel alloc] initWithFrame:CGRectMake(5, 20, self.view.frame.size.width-10, 35)];
-//    lable.text=@"this is a custom view";
-//    [actionview addSubview:lable];
-//    
-//    [actionview showInView:self.view];
     [[ShareTools shareToolsInstance] showShareView:self isFollow:NO];
     
 }

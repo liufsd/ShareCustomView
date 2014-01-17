@@ -5,7 +5,7 @@ custom shareSDK actionSheet view  and support like/unlike button.
 
 
 ##Screenshot
-![Screenshot](https://raw.github.com/79144876/ShareCustomView/master/screenshot.jpg)
+![Screenshot](https://raw.github.com/79144876/ShareCustomView/master/screenshot.png)
 
 
 ##ShareSDK lib
