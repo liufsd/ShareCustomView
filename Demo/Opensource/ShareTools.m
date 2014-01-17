@@ -31,11 +31,14 @@ static ShareTools *_shareTools = nil;
         self.shareImageActionTypes = @[[NSNumber numberWithInteger:ShareTypeSinaWeibo],[NSNumber numberWithInteger:ShareTypeQQSpace], [NSNumber numberWithInteger:ShareTypeQQ],[NSNumber numberWithInteger:ShareTypeWeixiSession],[NSNumber numberWithInteger:ShareTypeWeixiTimeline], [NSNumber numberWithInteger:ShareTypeSMS],[NSNumber numberWithInteger:ShareTypeMail], [NSNumber numberWithInteger:ShareTypeCopy],[NSNumber numberWithInteger:ShareTypeMail], [NSNumber numberWithInteger:ShareTypeCopy],[NSNumber numberWithInteger:ShareTypeMail], [NSNumber numberWithInteger:ShareTypeCopy],[NSNumber numberWithInteger:ShareTypeMail], [NSNumber numberWithInteger:ShareTypeCopy]];
     }
     CGRect baseRect = [[UIScreen mainScreen] bounds];
-    ActionViewContent *sheetContentView = [[ActionViewContent alloc] initWithFrame:CGRectMake(0, 0, 320, 180)];
-    [sheetContentView initwithIconSheetDelegate:self ItemCount:[self numberOfItemsInActionSheet]];
-    ActionView* actionview=[[ActionView alloc] initWithFrame:CGRectMake(0, [[UIApplication sharedApplication] keyWindow].frame.size.height, baseRect.size.width, 350)];
-    [actionview addSubview:sheetContentView];
-    [actionview showInView:uiViewController.view];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone){
+        ActionViewContent *sheetContentView = [[ActionViewContent alloc] initWithFrame:CGRectMake(0, 0, 320, 180)];
+        [sheetContentView initwithIconSheetDelegate:self ItemCount:[self numberOfItemsInActionSheet]];
+        ActionView* actionview=[[ActionView alloc] initWithFrame:CGRectMake(0, [[UIApplication sharedApplication] keyWindow].frame.size.height, baseRect.size.width, 350)];
+        [actionview addSubview:sheetContentView];
+        [actionview showInView:uiViewController.view];
+    }
+
 }
 
 #pragma -- ActionViewContentDelegate
@@ -50,7 +53,7 @@ static ShareTools *_shareTools = nil;
     [[cell iconView] setImage:[UIImage imageNamed:[@"Resource.bundle/Icon/" stringByAppendingString:[self.shareImageList objectAtIndex:index]]]];
     [[cell titleLabel] setText:[ self.shareImageValue objectAtIndex:index]];
     cell.index = index;
-//    cell.actionType = [[self.shareImageActionTypes objectAtIndex:index] integerValue];
+    cell.actionType = [[self.shareImageActionTypes objectAtIndex:index] integerValue];
     return cell;
 }
 - (void)DidTapOnItemAtIndex:(NSInteger)index actionType:(NSInteger)type
