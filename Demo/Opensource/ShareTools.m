@@ -33,7 +33,7 @@ static ShareTools *_shareTools = nil;
     CGRect baseRect = [[UIScreen mainScreen] bounds];
     ActionViewContent *sheetContentView = [[ActionViewContent alloc] initWithFrame:CGRectMake(0, 0, 320, 180)];
     [sheetContentView initwithIconSheetDelegate:self ItemCount:[self numberOfItemsInActionSheet]];
-    ActionView* actionview=[[ActionView alloc] initWithFrame:CGRectMake(0, [[UIApplication sharedApplication] keyWindow].frame.size.height, baseRect.size.width, 260)];
+    ActionView* actionview=[[ActionView alloc] initWithFrame:CGRectMake(0, [[UIApplication sharedApplication] keyWindow].frame.size.height, baseRect.size.width, 350)];
     [actionview addSubview:sheetContentView];
     [actionview showInView:uiViewController.view];
 }

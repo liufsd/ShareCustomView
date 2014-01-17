@@ -18,6 +18,7 @@
 -(void)dismiss;
 
 @property(nonatomic,retain)UIButton* CancelButton;
-@property UIView *transparentView;
+@property(nonatomic,retain)UIButton* FollowButton;
+@property(nonatomic,retain)UIView *transparentView;
 @property BOOL visible;
 @end

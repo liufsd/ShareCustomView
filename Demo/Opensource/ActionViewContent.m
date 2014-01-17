@@ -34,7 +34,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.scrollView = [[[UIScrollView alloc] initWithFrame:CGRectMake(0, 20, 320, 80*2)] autorelease];
+        self.scrollView = [[[UIScrollView alloc] initWithFrame:CGRectMake(0, 22, 320, 80*2)] autorelease];
         [scrollView setPagingEnabled:YES];
         [scrollView setBackgroundColor:[UIColor clearColor]];
         [scrollView setShowsHorizontalScrollIndicator:NO];
@@ -42,10 +42,9 @@
         [scrollView setDelegate:self];
         [scrollView setScrollEnabled:YES];
         [scrollView setBounces:NO];
-        [scrollView setBackgroundColor:[UIColor grayColor]];
         [self addSubview:scrollView];
         
-        self.pageControl = [[[UIPageControl alloc] initWithFrame:CGRectMake(320/2, 80*2, 0, 20)] autorelease];
+        self.pageControl = [[[UIPageControl alloc] initWithFrame:CGRectMake(320/2, 85*2 + 22, 0, 20)] autorelease];
         [pageControl setNumberOfPages:0];
         [pageControl setCurrentPage:0];
         [pageControl addTarget:self action:@selector(changePage:)forControlEvents:UIControlEventValueChanged];
@@ -55,16 +54,6 @@
 }
 -(id)initwithIconSheetDelegate:(id<ActionViewContentDelegate>)delegate ItemCount:(int)cout
 {
-//    int rowCount = 4;
-//    if (cout <=3) {
-//        rowCount = 1;
-//    } else if (cout <=6) {
-//        rowCount = 2;
-//    }
-//    NSString* titleBlank = @"\n\n\n\n\n\n";
-//    for (int i = 1 ; i<rowCount; i++) {
-//        titleBlank = [NSString stringWithFormat:@"%@%@",titleBlank,@"\n\n\n\n\n\n\n"];
-//    }
     if (self) {
         IconDelegate = delegate;
         self.items = [[[NSMutableArray alloc] initWithCapacity:cout] autorelease];
@@ -94,30 +83,21 @@
     
     int rowCount = 4;
     
-    [scrollView setFrame:CGRectMake(0, 0, 320, 200)];
+    [scrollView setFrame:CGRectMake(0, 22, 320, 200)];
     [scrollView setContentSize:CGSizeMake(320*(count/itemPerPage+1), 200)];
     [pageControl setNumberOfPages:count/itemPerPage+1];
     [pageControl setCurrentPage:0];
-    
-    
+
     for (int i = 0; i< count; i++) {
         ActionViewContentCell* cell = [IconDelegate cellForViewAtIndex:i];
         int PageNo = i/itemPerPage;
-        //        NSLog(@"page %d",PageNo);
         int index  = i%itemPerPage;
-        
         if (itemPerPage == 8) {
-            
             int row = index/4;
             int column = index%4;
-            
-            
             float centerY = (1+row*3)*self.scrollView.frame.size.height/(2*rowCount);
             float centerX = (1+column*2)*self.scrollView.frame.size.width/8;
-            
-            //            NSLog(@"%f %f",centerX+320*PageNo,centerY);
-            NSLog(@"point: (%f,%f)",centerX+320*PageNo, centerY+30);
-            [cell setCenter:CGPointMake(centerX+320*PageNo, centerY+30)];
+            [cell setCenter:CGPointMake(centerX+320*PageNo, centerY+20 + (row-1)*5)];
             [self.scrollView addSubview:cell];
             
             UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(actionForItem:)];
@@ -167,18 +147,18 @@
 
 -(id)init
 {
-    self = [super initWithFrame:CGRectMake(0, 0, 60, 60)];
+    self = [super initWithFrame:CGRectMake(0, 2, 65, 60)];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         
-        self.iconView = [[[UIImageView alloc] initWithFrame:CGRectMake(6.5, 0, 48, 48)] autorelease];
+        self.iconView = [[[UIImageView alloc] initWithFrame:CGRectMake(6.5, 0, 55, 55)] autorelease];
         [iconView setBackgroundColor:[UIColor clearColor]];
-        [[iconView layer] setCornerRadius:8.0f];
+        [[iconView layer] setCornerRadius:9.0f];
         [[iconView layer] setMasksToBounds:YES];
         
         [self addSubview:iconView];
         
-        self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(-3, 52, 70, 13)] autorelease];
+        self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(-2.5, 56, 70, 13)] autorelease];
         [titleLabel setBackgroundColor:[UIColor clearColor]];
         [titleLabel setTextAlignment:UITextAlignmentCenter];
         [titleLabel setFont:[UIFont systemFontOfSize:10]];

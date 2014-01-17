@@ -9,7 +9,7 @@
 #import "ActionView.h"
 
 @implementation ActionView
-@synthesize CancelButton;
+@synthesize CancelButton ,FollowButton;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -37,15 +37,32 @@
         }
 
 #endif
-                self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
+        UILabel *titleLable = [[UILabel alloc] initWithFrame:CGRectMake(100, 3, 200, 20)];
+        [titleLable setText:@"share this article"];
+        [titleLable setTextColor:[UIColor grayColor]];
+        [titleLable setFont:[UIFont systemFontOfSize:18]];
+        [self addSubview:titleLable];
         
-        CancelButton=[UIButton buttonWithType:UIButtonTypeCustom];
-        CancelButton.frame=CGRectMake(10, self.frame.size.height-40, self.frame.size.width-20, 30);
+        FollowButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        FollowButton.frame = CGRectMake(10, self.frame.size.height-60*2, self.frame.size.width-20, 44);
+        FollowButton.layer.borderWidth = 0.5;
+        FollowButton.layer.borderColor = [[UIColor grayColor] CGColor];
+        [FollowButton setTitle:NSLocalizedString(@"收藏", nil) forState:UIControlStateNormal];
+        [FollowButton setTitle:NSLocalizedString(@"收藏", nil) forState:UIControlStateHighlighted];
+        [FollowButton addTarget:self action:@selector(followAction) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:FollowButton];
+        
+        CancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        CancelButton.frame = CGRectMake(10, self.frame.size.height-60, self.frame.size.width-20, 44);
+        CancelButton.layer.borderWidth = 0.5;
+        CancelButton.layer.borderColor = [[UIColor grayColor] CGColor];
         [CancelButton setTitle:NSLocalizedString(@"取消", nil) forState:UIControlStateNormal];
         [CancelButton setTitle:NSLocalizedString(@"取消", nil) forState:UIControlStateHighlighted];
         [CancelButton addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:CancelButton];
         
+
         self.transparentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds))];
         self.transparentView.backgroundColor = [UIColor blackColor];
         self.transparentView.alpha = 0.0f;
@@ -55,6 +72,11 @@
         [self.transparentView addGestureRecognizer:tap];
     }
     return self;
+}
+
+- (void)followAction
+{
+    NSLog(@"touch follow");
 }
 
 - (void)removeFromView {
