@@ -71,7 +71,7 @@
 //    [actionview addSubview:lable];
 //    
 //    [actionview showInView:self.view];
-    [[ShareTools shareToolsInstance] showShareView:self];
+    [[ShareTools shareToolsInstance] showShareView:self isFollow:NO];
     
 }
 

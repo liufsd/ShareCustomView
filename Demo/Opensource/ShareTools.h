@@ -15,6 +15,6 @@
 @property (nonatomic, retain)NSArray         *shareImageActionTypes;
 @property (nonatomic, retain)ActionView      *shareView;
 +(ShareTools *)shareToolsInstance;
--(void)showShareView:(UIViewController *)uiViewController;
+-(void)showShareView:(UIViewController *)uiViewController isFollow:(BOOL)follow;
 -(void)shareWithMode:(int)action fromSender:(UIView*)sender shareContent:(NSString*)someText;
 @end

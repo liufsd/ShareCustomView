@@ -21,4 +21,7 @@
 @property(nonatomic,retain)UIButton* FollowButton;
 @property(nonatomic,retain)UIView *transparentView;
 @property BOOL visible;
+@property BOOL isFollow;
+
+- (void)updateFollowStatus:(BOOL)follow;
 @end

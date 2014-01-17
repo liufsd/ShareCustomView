@@ -25,7 +25,7 @@ static ShareTools *_shareTools = nil;
 }
 
 #pragma -- showAction
--(void)showShareView:(UIViewController *)uiViewController
+-(void)showShareView:(UIViewController *)uiViewController isFollow:(BOOL)follow
 {
     if (self.shareImageList==nil) {
         self.shareImageList = @[@"sns_icon_1.png", @"sns_icon_6.png", @"sns_icon_24.png", @"sns_icon_22.png", @"sns_icon_23.png", @"sns_icon_19.png", @"sns_icon_18.png", @"sns_icon_21.png", @"sns_icon_21.png", @"sns_icon_21.png", @"sns_icon_18.png", @"sns_icon_21.png", @"sns_icon_21.png", @"sns_icon_21.png"];
@@ -38,7 +38,9 @@ static ShareTools *_shareTools = nil;
         [sheetContentView initwithIconSheetDelegate:self ItemCount:[self numberOfItemsInActionSheet]];
         self.shareView=[[ActionView alloc] initWithFrame:CGRectMake(0, [[UIApplication sharedApplication] keyWindow].frame.size.height, baseRect.size.width, 350)];
         [self.shareView addSubview:sheetContentView];
+        [self.shareView updateFollowStatus:follow];
         [self.shareView showInView:uiViewController.view];
+        [sheetContentView release];
     }
 
 }

@@ -73,10 +73,18 @@
     }
     return self;
 }
-
+- (void)updateFollowStatus:(BOOL)follow
+{
+    self.isFollow = follow;
+    if (self.FollowButton) {
+        [FollowButton setTitle:follow ?NSLocalizedString(@"取消收藏", nil):NSLocalizedString(@"收藏", nil) forState:UIControlStateNormal];
+        [FollowButton setTitle:follow ?NSLocalizedString(@"取消收藏", nil):NSLocalizedString(@"收藏", nil) forState:UIControlStateHighlighted];
+    }
+}
 - (void)followAction
 {
     NSLog(@"touch follow");
+    [self updateFollowStatus:!self.isFollow];
 }
 
 - (void)removeFromView {
