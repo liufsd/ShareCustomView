@@ -46,8 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0612D79718878F4800B303CE /* AWActionSheetIpad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWActionSheetIpad.h; sourceTree = "<group>"; };
-		0612D79818878F4800B303CE /* AWActionSheetIpad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWActionSheetIpad.m; sourceTree = "<group>"; };
+		0612D79718878F4800B303CE /* AWActionSheetIpad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWActionSheetIpad.h; path = ../Test/AWActionSheetIpad.h; sourceTree = "<group>"; };
+		0612D79818878F4800B303CE /* AWActionSheetIpad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWActionSheetIpad.m; path = ../Test/AWActionSheetIpad.m; sourceTree = "<group>"; };
 		066573191888F1330053C577 /* ActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionView.h; sourceTree = "<group>"; };
 		0665731A1888F1330053C577 /* ActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionView.m; sourceTree = "<group>"; };
 		0665731F1888F5020053C577 /* photo1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo1.jpg; sourceTree = "<group>"; };
@@ -106,9 +106,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		065035DF1889124200AE6676 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				6EABB5F218278FB3009DFAD6 /* ViewController.h */,
+				6EABB5F318278FB3009DFAD6 /* ViewController.m */,
+				6E1F0E8C182A171D00F762F5 /* HYActivityView.h */,
+				6E1F0E8D182A171D00F762F5 /* HYActivityView.m */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
 		066573181888F1330053C577 /* Opensource */ = {
 			isa = PBXGroup;
 			children = (
+				0612D79718878F4800B303CE /* AWActionSheetIpad.h */,
+				0612D79818878F4800B303CE /* AWActionSheetIpad.m */,
 				066573191888F1330053C577 /* ActionView.h */,
 				0665731A1888F1330053C577 /* ActionView.m */,
 			);
@@ -183,15 +196,9 @@
 			isa = PBXGroup;
 			children = (
 				066573181888F1330053C577 /* Opensource */,
-				0612D79718878F4800B303CE /* AWActionSheetIpad.h */,
-				0612D79818878F4800B303CE /* AWActionSheetIpad.m */,
-				6E186088182CD38A00B21899 /* image */,
+				065035DF1889124200AE6676 /* Class */,
 				6EABB5E418278FA4009DFAD6 /* AppDelegate.h */,
 				6EABB5E518278FA4009DFAD6 /* AppDelegate.m */,
-				6EABB5F218278FB3009DFAD6 /* ViewController.h */,
-				6EABB5F318278FB3009DFAD6 /* ViewController.m */,
-				6E1F0E8C182A171D00F762F5 /* HYActivityView.h */,
-				6E1F0E8D182A171D00F762F5 /* HYActivityView.m */,
 				6EABB5DC18278FA4009DFAD6 /* Supporting Files */,
 			);
 			path = Test;
@@ -200,6 +207,7 @@
 		6EABB5DC18278FA4009DFAD6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E186088182CD38A00B21899 /* image */,
 				0665731E1888F5020053C577 /* Photos */,
 				6EABB5DD18278FA4009DFAD6 /* Test-Info.plist */,
 				6EABB5DE18278FA4009DFAD6 /* InfoPlist.strings */,
