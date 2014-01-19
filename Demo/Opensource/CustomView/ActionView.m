@@ -38,10 +38,11 @@
 
 #endif
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
-        UILabel *titleLable = [[UILabel alloc] initWithFrame:CGRectMake(100, 3, 200, 20)];
+        UILabel *titleLable = [[UILabel alloc] initWithFrame:CGRectMake(95, 3, 200, 20)];
         [titleLable setText:@"share this article"];
         [titleLable setTextColor:[UIColor grayColor]];
         [titleLable setFont:[UIFont systemFontOfSize:18]];
+        [titleLable setBackgroundColor:[UIColor clearColor]];
         [self addSubview:titleLable];
         
         FollowButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -85,6 +86,7 @@
 {
     NSLog(@"touch follow");
     [self updateFollowStatus:!self.isFollow];
+//    [self removeFromView];
 }
 
 - (void)removeFromView {
